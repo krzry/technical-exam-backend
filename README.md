@@ -22,7 +22,7 @@ npm start
 2. Edit a user [put]- `/users/:id`
 3. Delete a user [delete] - `/users/:id`
 4. View list of all users in the system [get] - `/users/`
-5. View a User [get] - `/users/1`
+5. View a User [get] - `/users/:id`
 5. Delete multiple users [delete] - `/users/delete-multiple-users`, body ex. {
     "userIds": [2, 3]
 }
