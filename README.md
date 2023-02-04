@@ -26,17 +26,18 @@ npm start
 5. Delete multiple users [delete] - `/users/delete-multiple-users`, body ex. {
     "userIds": [2, 3]
 }
+6. Authenticated login [post] - `/login`
 
 
 ## Technologies used
 
 - [node.js] - evented I/O for the backend
 - [Express] - fast node.js network app framework
-- [md5] - a JavaScript function for hashing messages with MD5.
 - [knex] - database migration package
 - [mysql2] - MYSQL package for nodejs
 - [nodemon] - simple monitor script for use during development of a Node.js app.
-
+- [bcrypt] - A library to help you hash passwords.
+- [jsonwebtoken] - data encryption for session package
 
 
 
