@@ -12,7 +12,7 @@ exports.up = function (knex) {
       table.string("contact_phone_number", 25).notNullable();
       table.string("email", 50).notNullable();
       table.string("username", 50).notNullable();
-      table.string("password", 50).notNullable();
+      table.string("password", 255).notNullable();
    });
 };
 

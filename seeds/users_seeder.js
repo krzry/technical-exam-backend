@@ -14,7 +14,7 @@ exports.seed = async function (knex) {
          contact_phone_number: "091512345124",
          email: "sampleemail1@gmail.com",
          username: "user1",
-         password: "21232f297a57a5a743894a0e4a801fc3",
+         password: "$2b$10$WbehiHa2OABygVMcRWW3ZeLfoKYAUjxiHu6z6oLN3vAOLZm.fKp4m",
       },
       {
          first_name: "Juan",
@@ -24,7 +24,7 @@ exports.seed = async function (knex) {
          contact_phone_number: "091512590238",
          email: "sampleemail2@gmail.com",
          username: "user2",
-         password: "21232f297a57a5a743894a0e4a801fc3",
+         password: "$2b$10$aOxorDZkqJY8z4/mDSTS/eIKnoKkL3xidac4XWEdI7Z5c0TGVDAE6",
       },
    ]);
 };

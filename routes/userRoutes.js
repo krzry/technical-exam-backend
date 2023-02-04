@@ -2,7 +2,7 @@ require("dotenv").config();
 const mysql = require("mysql2");
 const express = require("express");
 const router = express.Router();
-const md5 = require('md5');
+const bcrypt = require('bcrypt');
 
 const connection = mysql.createConnection({
    host: process.env.DB_HOST,
@@ -45,6 +45,7 @@ router.post("/create-user", (req, res) => {
       username,
       password,
    } = req.body;
+   const hashedPassword = bcrypt.hashSync(password, 10);
    const query =
       "INSERT INTO users(first_name, last_name, address, post_code, contact_phone_number, email, username, password) VALUES (?,?,?,?,?,?,?,?)";
 
@@ -58,7 +59,7 @@ router.post("/create-user", (req, res) => {
          contact_phone_number,
          email,
          username,
-         md5(password),
+         hashedPassword,
       ],
       (err, result) => {
          if (err) throw err;
@@ -80,6 +81,7 @@ router.put("/:id", (req, res) => {
       username,
       password,
    } = req.body;
+   const hashedPassword = bcrypt.hashSync(password, 10);
    const query =
       "UPDATE users SET first_name = ?, last_name = ?, address = ?, post_code = ?, contact_phone_number = ?, email = ?, username = ?, password = ? WHERE id = ?";
 
@@ -93,7 +95,7 @@ router.put("/:id", (req, res) => {
          contact_phone_number,
          email,
          username,
-         password,
+         hashedPassword,
          id,
       ],
       (err, result) => {

@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const userRoutes = require("./routes/userRoutes");
+const loginRoutes = require("./routes/loginRoute");
 
 const app = express();
 
@@ -14,3 +15,4 @@ app.use(express.json()); // to recognize Request object as a JSON Object
 
 //Routes
 app.use("/users", userRoutes);
+app.use("/login", loginRoutes);
